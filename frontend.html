@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LoanLink SIH26092 | Civic Fintech Scheme Discovery &amp; Planning</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#e6e8ea",
+            "outline": "#6d7a77",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-surface": "#191c1e",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#005049",
+            "on-secondary-container": "#5c647a",
+            "primary-fixed": "#89f5e7",
+            "tertiary-fixed": "#ffdcc3",
+            "surface-container-low": "#f2f4f6",
+            "error": "#ba1a1a",
+            "primary-container": "#008378",
+            "tertiary": "#8d4b00",
+            "surface-variant": "#e0e3e5",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "secondary-fixed-dim": "#bec6e0",
+            "secondary-container": "#dae2fd",
+            "secondary": "#565e74",
+            "on-error-container": "#93000a",
+            "surface-bright": "#f7f9fb",
+            "surface-container-highest": "#e0e3e5",
+            "on-primary-fixed": "#00201d",
+            "tertiary-container": "#b15f00",
+            "on-background": "#191c1e",
+            "outline-variant": "#bcc9c6",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "surface-dim": "#d8dadc",
+            "background": "#f7f9fb",
+            "primary-fixed-dim": "#6bd8cb",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-tertiary": "#ffffff",
+            "surface": "#f7f9fb",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-tertiary-fixed": "#2f1500",
+            "on-secondary-fixed": "#131b2e",
+            "on-tertiary-container": "#fffbff",
+            "surface-container": "#eceef0",
+            "inverse-primary": "#6bd8cb",
+            "on-primary-container": "#f4fffc",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#006a61",
+            "secondary-fixed": "#dae2fd",
+            "primary": "#00685f",
+            "on-surface-variant": "#3d4947"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "margin-tablet": "2rem",
+            "space-lg": "1.5rem",
+            "space-4xl": "4rem",
+            "space-sm": "0.75rem",
+            "max-content-width": "75rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "2.5rem",
+            "gutter-desktop": "2rem",
+            "margin-desktop": "3rem",
+            "margin-mobile": "1rem",
+            "space-md": "1rem",
+            "space-3xl": "3rem",
+            "space-xs": "0.5rem",
+            "space-2xs": "0.25rem",
+            "gutter-tablet": "1.5rem",
+            "space-xl": "2rem"
+          },
+          fontFamily: {
+            "label-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "mono-num": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-xl": ["Inter"],
+            "display-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-md": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.02em", fontWeight: "600" }],
+            "headline-lg": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-sm": ["1.125rem", { lineHeight: "1.5rem", letterSpacing: "0em", fontWeight: "600" }],
+            "body-md": ["1rem", { lineHeight: "1.5rem", letterSpacing: "0em", fontWeight: "400" }],
+            "headline-md": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-xl-mobile": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "mono-num": ["1.125rem", { lineHeight: "1.5rem", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display-lg-mobile": ["2.25rem", { lineHeight: "2.75rem", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-xl": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "display-lg": ["3rem", { lineHeight: "3.5rem", letterSpacing: "-0.025em", fontWeight: "700" }],
+            "label-sm": ["0.6875rem", { lineHeight: "0.875rem", letterSpacing: "0.03em", fontWeight: "500" }],
+            "label-lg": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.01em", fontWeight: "600" }],
+            "body-sm": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.005em", fontWeight: "400" }],
+            "body-lg": ["1.125rem", { lineHeight: "1.75rem", letterSpacing: "0em", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #bcc9c6;
+      border-radius: 4px;
+    }
+    .step-badge-active {
+      background-color: #00685f;
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 104, 95, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TOP APP BAR -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<div class="max-w-max-content-width mx-auto px-gutter-desktop py-space-sm flex justify-between items-center">
+<!-- Logo & Brand anchor -->
+<div class="flex items-center gap-space-xs cursor-pointer" onclick="goToStep(1)">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="text-headline-md font-headline-md text-primary font-bold tracking-tight">LoanLink</span>
+<span class="text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed px-1.5 py-0.5 rounded font-mono">SIH26092</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant hidden sm:block">Civic Public Credit &amp; Welfare Bridge</p>
+</div>
+</div>
+<!-- Quick Interactive Journey Tracker -->
+<div class="hidden lg:flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant">
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">route</span> Flow:
+        </span>
+<span class="text-label-sm font-label-sm font-semibold text-on-surface" id="currentStepIndicator">1. Home &amp; Discovery</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">(Step <span id="stepNumberDisplay">1</span> of 10)</span>
+</div>
+<!-- Action Utilities -->
+<div class="flex items-center gap-space-sm">
+<!-- Language Switcher Pill -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant text-label-sm font-label-sm">
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all" id="langEnBtn" onclick="setLanguage('en')">English</button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-primary transition-all" id="langHiBtn" onclick="setLanguage('hi')">हिंदी</button>
+</div>
+<!-- Accessibility / High Contrast Toggle -->
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg border border-outline-variant bg-surface-container-lowest flex items-center justify-center" onclick="toggleContrast()" title="Toggle Visual Contrast">
+<span class="material-symbols-outlined">accessibility_new</span>
+</button>
+<!-- CTA Direct Button -->
+<button class="hidden md:flex items-center gap-1.5 bg-primary text-on-primary text-label-lg font-label-lg px-space-md py-2 rounded-lg hover:bg-primary-container transition-all shadow-sm active:scale-95" onclick="goToStep(2)">
+<span class="material-symbols-outlined text-base">verified_user</span>
+<span>Check Eligibility</span>
+</button>
+</div>
+</div>
+<!-- 10-Step Interactive Journey Stepper Rail -->
+<div class="bg-surface-container border-t border-outline-variant overflow-x-auto custom-scrollbar">
+<div class="max-w-max-content-width mx-auto px-gutter-desktop py-2 flex items-center gap-2 min-w-max">
+<button class="step-badge step-badge-active px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-1" onclick="goToStep(1)">
+<span>1. Landing</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-2" onclick="goToStep(2)">
+<span>2. Profile</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-3" onclick="goToStep(3)">
+<span>3. AI Matches</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-4" onclick="goToStep(4)">
+<span>4. Scheme Details</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-5" onclick="goToStep(5)">
+<span>5. Comparison</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-6" onclick="goToStep(6)">
+<span>6. EMI Calculator</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-7" onclick="goToStep(7)">
+<span>7. Health Simulator</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-8" onclick="goToStep(8)">
+<span>8. Readiness</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-9" onclick="goToStep(9)">
+<span>9. Document Check</span>
+</button>
+<span class="text-outline-variant text-xs">/</span>
+<button class="step-badge text-on-surface-variant hover:text-primary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1.5 transition-all" id="pill-10" onclick="goToStep(10)">
+<span>10. Partner Locator</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow w-full max-w-max-content-width mx-auto px-gutter-desktop py-space-xl">
+<!-- ==================== FLOW STEP 1: LANDING PAGE ==================== -->
+<section class="flow-step space-y-space-2xl" id="step-1">
+<!-- Hero Unit -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center bg-surface-container-lowest rounded-xl p-space-xl border border-outline-variant shadow-sm">
+<div class="lg:col-span-7 space-y-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-sm">flag</span>
+<span>National Civic Fintech Initiative</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-on-surface tracking-tight leading-tight">
+            Find the right <span class="text-primary underline decoration-tertiary decoration-4">government scheme</span> for you.
+          </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+            Find the right scheme. Plan your loan. Take the next step. Empowering marginalized entrepreneurs, artisans, and small business owners through transparent civic credit discovery.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<button class="bg-primary text-on-primary text-label-lg font-label-lg px-space-xl py-3 rounded-lg hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm active:scale-95" onclick="goToStep(2)">
+<span>Find My Scheme</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+<button class="border border-outline text-on-surface text-label-lg font-label-lg px-space-lg py-3 rounded-lg hover:bg-surface-container-low transition-all flex items-center gap-2" onclick="goToStep(6)">
+<span class="material-symbols-outlined text-base">calculate</span>
+<span>Explore How It Works</span>
+</button>
+</div>
+<!-- Official Civic Disclaimer Badge -->
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-low border border-outline-variant text-body-sm font-body-sm text-on-surface-variant mt-4">
+<span class="material-symbols-outlined text-primary text-lg flex-shrink-0">shield</span>
+<span><strong>Civic Trust Guarantee:</strong> Built around official public welfare frameworks. LoanLink organizes publicly available scheme information into a structured, privacy-preserving roadmap.</span>
+</div>
+</div>
+<!-- Interactive Pipeline Vector Visual -->
+<div class="lg:col-span-5 bg-surface-container-low p-space-lg rounded-xl border border-outline-variant space-y-3">
+<div class="text-label-md font-label-md text-on-surface uppercase tracking-wider font-bold flex items-center justify-between">
+<span>Algorithmic Civic Pipeline</span>
+<span class="text-primary text-xs font-mono">100% Deterministic</span>
+</div>
+<!-- Step Graphic Items -->
+<div class="space-y-2.5">
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs">01</div>
+<div class="flex-grow">
+<div class="text-label-md font-label-md text-on-surface">1. User &amp; Business Profile</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Self-declared demographic &amp; financial inputs</div>
+</div>
+<span class="material-symbols-outlined text-primary text-lg">person</span>
+</div>
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">02</div>
+<div class="flex-grow">
+<div class="text-label-md font-label-md text-on-surface">2. AI Scheme Discovery</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Automated matching against central/state guidelines</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg">psychology</span>
+</div>
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs">03</div>
+<div class="flex-grow">
+<div class="text-label-md font-label-md text-on-surface">3. Financial Planning &amp; EMI</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Debt-to-income stress testing and health ratings</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg">finance_chip</span>
+</div>
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-lowest rounded-lg border border-outline-variant shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs">04</div>
+<div class="flex-grow">
+<div class="text-label-md font-label-md text-on-surface">4. Authorized Partner Hand-off</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Geospatial matching to sanctioned public nodal banks</div>
+</div>
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 High-Value Feature Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="cursor-pointer bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant hover:border-primary hover:shadow-md transition-all group" onclick="goToStep(2)">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-space-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">travel_explore</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Find My Scheme</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Intelligent questionnaire for category, income, and business sector matching.</p>
+<div class="mt-4 text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1">Start Form →</div>
+</div>
+<!-- Card 2 -->
+<div class="cursor-pointer bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant hover:border-primary hover:shadow-md transition-all group" onclick="goToStep(6)">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">EMI Calculator</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Real-time amortization calculator with visual principal vs. interest breakdown.</p>
+<div class="mt-4 text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1">Simulate Loan →</div>
+</div>
+<!-- Card 3 -->
+<div class="cursor-pointer bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant hover:border-primary hover:shadow-md transition-all group" onclick="goToStep(7)">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-space-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Financial Health</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Check debt capacity ratios, repayment stress risk, and personalized credit readiness.</p>
+<div class="mt-4 text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1">View Health Index →</div>
+</div>
+<!-- Card 4 -->
+<div class="cursor-pointer bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant hover:border-primary hover:shadow-md transition-all group" onclick="goToStep(10)">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center mb-space-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">near_me</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">Find a Partner</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Locate certified nodal centers, district industries offices, and partnered public banks.</p>
+<div class="mt-4 text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1">Open Geo Locator →</div>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 2: PROFILE FORM ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-2">
+<div class="max-w-3xl mx-auto bg-surface-container-lowest rounded-xl border border-outline-variant p-space-xl shadow-sm">
+<!-- Form Header -->
+<div class="flex justify-between items-start border-b border-outline-variant pb-space-md mb-space-lg">
+<div>
+<div class="inline-block px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed font-bold mb-1">Step 2: Profile Diagnostic</div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface">Tell us about yourself</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Provide high-level details to compute your legal eligibility across subsidized public funds.</p>
+</div>
+<div class="bg-surface-container-low px-3 py-1 rounded text-label-sm font-label-sm font-medium text-on-surface-variant">
+            Privacy Protected • SIH26092
+          </div>
+</div>
+<form class="space-y-space-lg" id="profileForm" onsubmit="event.preventDefault(); goToStep(3);">
+<!-- Personal Info -->
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">badge</span>
+<span>1. Personal &amp; Demographic Details</span>
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Full Name</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary" required="" type="text" value="Rajeshwari Sundaram"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Age</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary" max="75" min="18" required="" type="number" value="34"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Gender</label>
+<select class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary">
+<option selected="">Female</option>
+<option>Male</option>
+<option>Transgender / Non-binary</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">State of Operation</label>
+<select class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary">
+<option selected="">Tamil Nadu</option>
+<option>Maharashtra</option>
+<option>Uttar Pradesh</option>
+<option>Karnataka</option>
+<option>Gujarat</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">District</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary" required="" type="text" value="Chennai / Kanchipuram"/>
+</div>
+</div>
+</div>
+<!-- Social Category & Income -->
+<div class="border-t border-outline-variant pt-space-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">family_restroom</span>
+<span>2. Social Category &amp; Household Income</span>
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Affirmative Category</label>
+<div class="grid grid-cols-4 gap-2">
+<label class="border border-primary bg-primary-fixed text-on-primary-fixed rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm">
+<input checked="" class="hidden" name="socCategory" type="radio"/>
+<span>OBC</span>
+</label>
+<label class="border border-outline-variant rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm hover:bg-surface-container-low">
+<input class="hidden" name="socCategory" type="radio"/>
+<span>SC</span>
+</label>
+<label class="border border-outline-variant rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm hover:bg-surface-container-low">
+<input class="hidden" name="socCategory" type="radio"/>
+<span>ST</span>
+</label>
+<label class="border border-outline-variant rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm hover:bg-surface-container-low">
+<input class="hidden" name="socCategory" type="radio"/>
+<span>General</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Annual Family Income (INR)</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary focus:ring-1 focus:ring-primary" id="profileIncome" type="number" value="380000"/>
+<span class="text-label-sm font-label-sm text-on-surface-variant">₹3.80 Lakh/year (Meets BPL &amp; Low-income subsidies)</span>
+</div>
+</div>
+</div>
+<!-- Business Activity & Requirement -->
+<div class="border-t border-outline-variant pt-space-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">storefront</span>
+<span>3. Enterprise &amp; Capital Requirements</span>
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Primary Trade Activity</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary" required="" type="text" value="Apparel &amp; Tailoring Workshop"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Project Total Cost</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary" type="number" value="500000"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1">Required Loan Subvention</label>
+<input class="w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md focus:border-primary" id="profileLoanAmount" type="number" value="450000"/>
+</div>
+</div>
+</div>
+<!-- Form CTAs -->
+<div class="border-t border-outline-variant pt-space-md flex items-center justify-between">
+<button class="text-on-surface-variant hover:text-on-surface text-label-md font-label-md flex items-center gap-1" onclick="goToStep(1)" type="button">
+              ← Back to Landing
+            </button>
+<button class="bg-primary text-on-primary text-label-lg font-label-lg px-space-xl py-3 rounded-lg hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm" type="submit">
+<span>✨ Find My Schemes</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- ==================== FLOW STEP 3: AI SCHEME MATCHING ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-3">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold">
+            Algorithmic Recommendation Engine
+          </div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">AI Scheme Matching</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Ranked deterministically for your profile: <strong>Female Micro-entrepreneur (Apparel, TN)</strong></p>
+</div>
+<div class="flex items-center gap-2">
+<button class="border border-outline-variant bg-surface-container-lowest px-space-md py-2 rounded-lg text-label-md font-label-md text-on-surface hover:border-primary flex items-center gap-1" onclick="goToStep(5)">
+<span class="material-symbols-outlined text-base">balance</span> Compare Top 3
+          </button>
+<button class="bg-primary text-on-primary px-space-md py-2 rounded-lg text-label-md font-label-lg hover:bg-primary-container flex items-center gap-1 shadow-sm" onclick="goToStep(4)">
+<span>Inspect Top Match</span> →
+          </button>
+</div>
+</div>
+<!-- Ranked Scheme Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Scheme 1 (Top Rank 94%) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary p-space-lg shadow-sm relative">
+<div class="absolute -top-3 right-6 bg-primary text-on-primary text-label-sm font-label-sm px-3 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+<span>🥇 94% Match</span> • <span>Strong Match</span>
+</div>
+<div class="space-y-3">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">National MSME Subvention Scheme</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Term Loan Scheme (NBCFDC &amp; State Channelizing)</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Concessional project term finance for micro-scale manufacturing and handloom units.</p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-outline-variant bg-surface-container-low p-2.5 rounded-lg">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Max Loan</div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">₹4,50,000</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Subsidized Rate</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">8.0% p.a.</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Tenure</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">7 Years</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> 100% Income Qualified
+              </span>
+<div class="flex items-center gap-2">
+<button class="text-label-sm font-label-sm border border-outline-variant px-3 py-1.5 rounded-lg hover:bg-surface-container-low" onclick="goToStep(5)">Compare</button>
+<button class="text-label-sm font-label-sm bg-primary text-on-primary px-3 py-1.5 rounded-lg hover:bg-primary-container" onclick="goToStep(4)">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Scheme 2 (82% Match) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm relative">
+<div class="absolute -top-3 right-6 bg-secondary text-on-secondary text-label-sm font-label-sm px-3 py-0.5 rounded-full">
+            82% Match • High Compatibility
+          </div>
+<div class="space-y-3">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Self-Help &amp; Direct Lending</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Micro Finance Scheme for Women Artisans</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Working capital support with simple documentation through cooperative federations.</p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-outline-variant bg-surface-container-low p-2.5 rounded-lg">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Max Loan</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">₹1,50,000</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Subsidized Rate</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">6.5% p.a.</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Tenure</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">3 Years</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Requires SHG linkage</span>
+<button class="text-label-sm font-label-sm border border-outline-variant px-3 py-1.5 rounded-lg hover:bg-surface-container-low" onclick="goToStep(5)">Compare</button>
+</div>
+</div>
+</div>
+<!-- Scheme 3 (71% Match) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Pradhan Mantri MUDRA Yojana</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">71% Match</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Mudra Tarun Plus Business Expansion</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-3">Institutional bank credit without collateral for expanding established small businesses.</p>
+<div class="grid grid-cols-3 gap-2 py-2 border-y border-outline-variant bg-surface-container-low p-2 rounded-lg text-xs">
+<div>Max: ₹10,00,000</div>
+<div>Rate: 9.65%</div>
+<div>Tenure: 5 Yrs</div>
+</div>
+</div>
+<!-- Scheme 4 (58% Match) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">State Special Subvention</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">58% Match</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface">State Artisan Grant-Loan Composite</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-3">25% capital subsidy component linked with cooperative credit societies for tool purchases.</p>
+<div class="grid grid-cols-3 gap-2 py-2 border-y border-outline-variant bg-surface-container-low p-2 rounded-lg text-xs">
+<div>Max: ₹2,00,000</div>
+<div>Rate: 7.0%</div>
+<div>Tenure: 4 Yrs</div>
+</div>
+</div>
+</div>
+<!-- Explainable AI (XAI) Insight Panel -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-space-lg">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Explainable AI (XAI): Why did we recommend these schemes?</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+          Our rule-based civic decision engine matched your inputs with statutory gazetted program guidelines with 0% black-box opacity:
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant">
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Income Ceiling</span>
+<span class="text-primary font-bold">100% Compatible</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full"></div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">₹3.8L is within ₹5L limit</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant">
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Business Activity</span>
+<span class="text-primary font-bold">95% Compatible</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[95%]"></div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">Apparel manufacturing qualifies</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant">
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Loan Amount Fit</span>
+<span class="text-primary font-bold">90% Compatible</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">Requested ₹4.5L covers 90% project</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant">
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Affirmative Category</span>
+<span class="text-primary font-bold">100% Eligible</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full"></div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block mt-1">OBC Women Priority Window active</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 4: SCHEME DETAILS ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-4">
+<!-- Detail Hero Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-xl shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-3 border-b border-outline-variant pb-4 mb-6">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary text-on-primary text-label-sm font-label-sm font-bold px-2.5 py-0.5 rounded-full">🥇 94% AI Match Score</span>
+<span class="text-label-sm font-label-sm bg-surface-container-low text-on-surface-variant px-2.5 py-0.5 rounded font-mono">CODE: NBCFDC-TL-2025</span>
+</div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface">Term Loan Scheme (NBCFDC Subsidized)</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Concessional medium-to-long term project finance administered via State Channelizing Agencies (SCA) &amp; select RRBs.</p>
+</div>
+<div class="flex gap-2">
+<button class="border border-outline-variant px-3 py-2 rounded-lg text-label-md font-label-md hover:bg-surface-container-low flex items-center gap-1" onclick="goToStep(5)">
+<span class="material-symbols-outlined text-sm">compare</span> Compare
+            </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container flex items-center gap-1" onclick="goToStep(6)">
+<span class="material-symbols-outlined text-sm">calculate</span> Calculate EMI
+            </button>
+</div>
+</div>
+<!-- 4 Metric Cards -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-6">
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Maximum Loan Cap</span>
+<div class="text-headline-lg font-headline-lg text-primary font-bold">₹4,50,000</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">90% of total project</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Concessional Interest</span>
+<div class="text-headline-lg font-headline-lg text-on-surface font-bold">8.0% p.a.</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Fixed government rate</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Repayment Tenure</span>
+<div class="text-headline-lg font-headline-lg text-on-surface font-bold">7 Years</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">84 monthly installments</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Moratorium Period</span>
+<div class="text-headline-lg font-headline-lg text-tertiary font-bold">6 Months</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Zero principal repayment</span>
+</div>
+</div>
+<!-- Detailed Lists (Eligibility + Documentation) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl">
+<!-- Eligibility Checklist -->
+<div class="border border-outline-variant rounded-xl p-space-md bg-surface-container-lowest">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+<span>Verified Eligibility Criteria</span>
+</h3>
+<ul class="space-y-2 text-body-sm font-body-sm">
+<li class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span>Applicant age between 18 and 60 years (You: 34 yrs)</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span>Annual family income &lt; ₹5.00 Lakhs (You: ₹3.80L)</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span>Affirmative Category / Backward Classes certified</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span>Own promoter equity contribution of minimum 10%</span>
+</li>
+</ul>
+</div>
+<!-- Documentation Checklist -->
+<div class="border border-outline-variant rounded-xl p-space-md bg-surface-container-lowest">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">inventory</span>
+<span>Mandatory Program Documents</span>
+</h3>
+<ul class="space-y-2 text-body-sm font-body-sm">
+<li class="flex items-center justify-between">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">task_alt</span> Aadhaar Card (Identity &amp; Proof)</span>
+<span class="text-label-sm font-label-sm text-primary font-bold">Verified</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">task_alt</span> Community / Caste Certificate</span>
+<span class="text-label-sm font-label-sm text-primary font-bold">Verified</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-base">pending</span> Income Certificate from Tahsildar</span>
+<span class="text-label-sm font-label-sm text-tertiary font-bold">Pending</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-outline text-base">hourglass_top</span> Machinery Quotation / Project Draft</span>
+<span class="text-label-sm font-label-sm text-outline-variant">Drafting</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Flow Action Footer -->
+<div class="mt-6 pt-4 border-t border-outline-variant flex flex-wrap items-center justify-between gap-3">
+<button class="text-on-surface-variant hover:text-on-surface text-label-md font-label-md" onclick="goToStep(3)">← Back to Recommendations</button>
+<div class="flex items-center gap-3">
+<button class="border border-outline px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-surface-container-low" onclick="goToStep(8)">📋 Check Readiness</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm" onclick="goToStep(10)">📍 Find Authorized Partner</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 5: SCHEME COMPARISON ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<span class="bg-secondary-container text-on-secondary-container px-2.5 py-0.5 rounded text-label-sm font-label-sm font-bold">Side-by-Side Analysis</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Scheme Comparison Engine</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Compare top-rated public loan programs according to financial subvention parameters.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm flex items-center gap-1 self-start sm:self-auto" onclick="goToStep(6)">
+<span>Calculate EMI</span> →
+        </button>
+</div>
+<!-- Comparison Matrix Table -->
+<div class="overflow-x-auto bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low">
+<th class="p-4 text-label-md font-label-md text-on-surface-variant w-1/4">Evaluation Attribute</th>
+<th class="p-4 text-label-md font-label-md text-primary bg-primary-fixed/20 border-x border-outline-variant w-1/4">
+                🥇 Term Loan Scheme <span class="block text-xs font-normal text-on-surface-variant">NBCFDC Partnered</span>
+</th>
+<th class="p-4 text-label-md font-label-md text-on-surface w-1/4">
+                Micro Finance Scheme <span class="block text-xs font-normal text-on-surface-variant">Artisan SHG Window</span>
+</th>
+<th class="p-4 text-label-md font-label-md text-on-surface w-1/4">
+                Mudra Tarun Plus <span class="block text-xs font-normal text-on-surface-variant">Commercial Bank Window</span>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<tr>
+<td class="p-4 font-semibold text-on-surface">AI Match Rating</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-bold text-primary">94% (Best Fit)</td>
+<td class="p-4">82%</td>
+<td class="p-4">71%</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Maximum Loan Subvention</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-bold text-on-surface">₹4,50,000</td>
+<td class="p-4">₹1,50,000</td>
+<td class="p-4">₹10,00,000</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Subsidized Interest Rate</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-bold text-primary">8.00% p.a.</td>
+<td class="p-4 text-primary font-bold">6.50% p.a.</td>
+<td class="p-4">9.65% - 11.20%</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Max Repayment Tenure</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-bold text-on-surface">7 Years (84 mos)</td>
+<td class="p-4">3 Years (36 mos)</td>
+<td class="p-4">5 Years (60 mos)</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Moratorium Period</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-bold text-on-surface">6 Months</td>
+<td class="p-4">1 Month</td>
+<td class="p-4">None / Bank discretion</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Estimated Monthly EMI</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-bold text-primary">~ ₹7,015 / mo</td>
+<td class="p-4">~ ₹4,598 / mo</td>
+<td class="p-4">~ ₹10,480 / mo (on 5L)</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Collateral Requirement</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant font-medium text-primary">Nil (Charge on assets)</td>
+<td class="p-4 text-primary font-medium">Nil (Group guarantee)</td>
+<td class="p-4">Nil (CGTMSE Covered)</td>
+</tr>
+<tr>
+<td class="p-4 font-semibold text-on-surface">Primary Benefit Highlight</td>
+<td class="p-4 bg-primary-fixed/20 border-x border-outline-variant text-on-surface">Extended 7yr term keeps EMI low; includes equipment grants.</td>
+<td class="p-4 text-on-surface-variant">Fastest disbursement (&lt; 7 days); low total interest liability.</td>
+<td class="p-4 text-on-surface-variant">Highest capital ceiling; allows major machinery imports.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Recommendation Summary Callout -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-space-md flex items-start gap-4">
+<div class="p-2 rounded-lg bg-primary text-on-primary flex-shrink-0">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mb-1">Our Recommendation For Your Textile Workshop</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            While the Micro Finance scheme provides a lower interest rate (6.5%), its 3-year tenure pushes the monthly burden too close to your working capital margins. The <strong>Term Loan Scheme (NBCFDC)</strong> is optimal because its 7-year tenure and 6-month moratorium provide sufficient buffer to purchase 4 industrial stitching units and achieve positive cash flow.
+          </p>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 6: INTERACTIVE EMI CALCULATOR ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-6">
+<div class="flex justify-between items-center">
+<div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded text-label-sm font-label-sm font-bold">Financial Subvention Planner</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Interactive EMI Calculator</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Adjust sliders to stress-test your monthly debt commitment and repayment schedule.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm flex items-center gap-1" onclick="goToStep(7)">
+<span>Check Financial Health</span> →
+        </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Sliders Form (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant space-y-space-lg shadow-sm">
+<!-- Slider 1: Loan Amount -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-label-md font-label-md text-on-surface">Principal Loan Amount</label>
+<span class="text-headline-md font-headline-md font-bold text-primary font-mono" id="loanAmountText">₹5,00,000</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" id="loanAmountSlider" max="1000000" min="100000" step="25000" type="range" value="500000"/>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mt-1">
+<span>₹1 Lakh</span>
+<span>₹5.5 Lakhs</span>
+<span>₹10 Lakhs</span>
+</div>
+</div>
+<!-- Slider 2: Interest Rate -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-label-md font-label-md text-on-surface">Subsidized Interest Rate (% p.a.)</label>
+<span class="text-headline-md font-headline-md font-bold text-on-surface font-mono" id="interestRateText">8.0%</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" id="interestRateSlider" max="14.0" min="6.0" step="0.25" type="range" value="8.0"/>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mt-1">
+<span>6.0% (Subsidized Floor)</span>
+<span>10.0%</span>
+<span>14.0% (Commercial Cap)</span>
+</div>
+</div>
+<!-- Slider 3: Tenure -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-label-md font-label-md text-on-surface">Loan Tenure Duration</label>
+<span class="text-headline-md font-headline-md font-bold text-on-surface font-mono" id="tenureYearsText">5 Years (60 mos)</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" id="tenureSlider" max="10" min="1" step="1" type="range" value="5"/>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mt-1">
+<span>1 Year</span>
+<span>5 Years</span>
+<span>10 Years</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">info</span>
+<span>Based on standard reducing balance method mandated under RBI priority lending rules.</span>
+</div>
+</div>
+<!-- Calculated Summary & Visual Donut Chart (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant flex flex-col justify-between shadow-sm">
+<div>
+<div class="text-center pb-4 border-b border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Calculated Monthly Installment</span>
+<div class="text-display-lg font-display-lg text-primary font-bold my-1" id="calculatedEmiDisplay">₹10,138</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">per month for <span id="tenureMonthsDisplay">60</span> months</span>
+</div>
+<!-- Dynamic Donut Breakdown -->
+<div class="flex items-center justify-center my-6 gap-6">
+<div class="relative w-36 h-36">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background circle (Principal) -->
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#dae2fd" stroke-width="4.5"></circle>
+<!-- Interest stroke segment -->
+<circle cx="18" cy="18" fill="transparent" id="donutInterestSegment" r="15.915" stroke="#00685f" stroke-dasharray="21, 79" stroke-dashoffset="0" stroke-width="4.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Ratio</span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface" id="interestPctLabel">21%</span>
+</div>
+</div>
+<!-- Legend breakdown -->
+<div class="space-y-2 text-label-sm font-label-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<div>
+<span class="text-on-surface-variant block">Principal</span>
+<span class="font-bold text-on-surface" id="breakdownPrincipal">₹5,00,000</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div>
+<span class="text-on-surface-variant block">Total Interest</span>
+<span class="font-bold text-primary" id="breakdownInterest">₹1,08,292</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex justify-between items-center text-body-sm font-body-sm mb-4">
+<span>Total Repayment Amount:</span>
+<span class="font-bold text-on-surface font-mono" id="breakdownTotalPayable">₹6,08,292</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg text-label-lg font-label-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 shadow-sm" onclick="goToStep(7)">
+<span class="material-symbols-outlined text-base">favorite</span>
+<span>Check My Financial Health</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 7: FINANCIAL HEALTH & WHAT-IF SIMULATOR ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-7">
+<!-- Section Header -->
+<div class="flex justify-between items-center">
+<div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded text-label-sm font-label-sm font-bold">Risk &amp; Debt Service Ratio Diagnostic</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Financial Health &amp; What-If Simulator</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Evaluate your monthly cash surplus vs. debt obligation to prevent default vulnerability.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm flex items-center gap-1" onclick="goToStep(8)">
+<span>Application Readiness</span> →
+        </button>
+</div>
+<!-- Health Overview Cards -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl">
+<!-- Score Circular Gauge Card (4 cols) -->
+<div class="md:col-span-4 bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant flex flex-col items-center justify-center text-center shadow-sm">
+<div class="relative w-44 h-44 my-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#e0e3e5" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#00685f" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-display-lg font-display-lg font-bold text-primary" id="healthScoreDisplay">78</span>
+<span class="text-label-sm font-label-sm font-bold text-on-surface-variant">out of 100</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-md font-label-md px-3 py-1 rounded-full font-bold">Good Financial Health</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">DTI ratio is well within national banking benchmarks.</p>
+</div>
+<!-- Metric Ratios & Explainers (8 cols) -->
+<div class="md:col-span-8 bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant space-y-space-md shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Monthly Income</span>
+<div class="text-headline-md font-headline-md font-bold text-on-surface">₹35,000</div>
+<span class="text-label-sm font-label-sm text-primary">Verified earnings</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Computed EMI</span>
+<div class="text-headline-md font-headline-md font-bold text-on-surface">₹10,138</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Term Loan Scheme</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Debt-to-Income (DTI)</span>
+<div class="text-headline-md font-headline-md font-bold text-primary" id="dtiDisplay">29.0%</div>
+<span class="text-label-sm font-label-sm text-primary font-semibold">Safe (&lt; 40% Ideal)</span>
+</div>
+</div>
+<!-- Progress Bars for Capacities -->
+<div class="space-y-3 pt-2">
+<div>
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Repayment Capacity Buffer</span>
+<span class="font-bold text-primary">80% (Robust)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[80%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Monthly Cash Flow Stress</span>
+<span class="font-bold text-on-surface">60% (Manageable)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[60%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Promoter Equity Coverage</span>
+<span class="font-bold text-primary">90% (Approved)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- AI Financial Insight Banner -->
+<div class="p-3 bg-primary-fixed/30 rounded-lg border border-primary/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">insights</span>
+<p class="text-body-sm font-body-sm text-on-surface">
+<strong>AI Advice:</strong> At ₹10,138/mo, your enterprise retains ₹24,862 monthly liquidity for raw fabrics and overhead. You are in an ideal position to apply without co-signer requirements.
+            </p>
+</div>
+</div>
+</div>
+<!-- Reactive What-If Loan Slider Sandbox -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant space-y-4 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-outline-variant pb-3">
+<h3 class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span>
+<span>Interactive "What-If" Stress Simulation</span>
+</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Live re-evaluation of DTI based on borrow size</span>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="text-label-md font-label-md text-on-surface">Test Different Loan Sizes:</label>
+<span class="text-headline-sm font-headline-sm font-bold text-primary font-mono" id="whatIfAmountDisplay">₹4,50,000</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" id="whatIfSlider" max="1000000" min="200000" step="50000" type="range" value="450000"/>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mt-1">
+<span>₹2,00,000 (Low Risk)</span>
+<span>₹6,00,000 (Medium)</span>
+<span>₹10,00,000 (High Risk)</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-2 text-center">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Simulated Monthly EMI</span>
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface font-mono" id="whatIfEmi">₹9,124 / mo</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Resulting DTI Ratio</span>
+<div class="text-headline-sm font-headline-sm font-bold text-primary font-mono" id="whatIfDti">26.1%</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Approval Probability</span>
+<div class="text-headline-sm font-headline-sm font-bold text-primary" id="whatIfApproval">Very High (95%)</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 8: APPLICATION READINESS ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-8">
+<div class="flex justify-between items-center">
+<div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded text-label-sm font-label-sm font-bold">Pre-Application Audit</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Application Readiness Gauge</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Comprehensive verification score before approaching sanctioned financial nodal offices.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm flex items-center gap-1" onclick="goToStep(9)">
+<span>Resolve Checklist</span> →
+        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl">
+<!-- Readiness Dial (4 cols) -->
+<div class="md:col-span-4 bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant flex flex-col items-center justify-center text-center shadow-sm">
+<div class="relative w-44 h-44 my-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#e0e3e5" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#00685f" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="3.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-display-lg font-display-lg font-bold text-primary">82%</span>
+<span class="text-label-sm font-label-sm font-bold text-on-surface-variant">Readiness Score</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-3 py-1 rounded-full font-bold">Almost Submission-Ready</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-2">Only 2 documentation prerequisites pending.</span>
+</div>
+<!-- Pillars breakdown (8 cols) -->
+<div class="md:col-span-8 bg-surface-container-lowest p-space-xl rounded-xl border border-outline-variant space-y-space-md shadow-sm">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Category Status Breakdown</h3>
+<div class="space-y-4">
+<!-- 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">fact_check</span>
+<div>
+<div class="text-label-md font-label-md text-on-surface">Statutory Eligibility</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Age, caste, trade classification, income ceiling</div>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded font-bold">100% Cleared</span>
+</div>
+<!-- 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">monetization_on</span>
+<div>
+<div class="text-label-md font-label-md text-on-surface">Financial Health &amp; DTI</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">29% debt service coverage ratio</div>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded font-bold">100% Cleared</span>
+</div>
+<!-- 3 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">folder_shared</span>
+<div>
+<div class="text-label-md font-label-md text-on-surface">Document Repository</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Income certificate &amp; quotation pending upload</div>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded font-bold">60% In Progress</span>
+</div>
+<!-- 4 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">hub</span>
+<div>
+<div class="text-label-md font-label-md text-on-surface">Partner Bank Compatibility</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">3 Sanctioned nodal partners identified in Chennai</div>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded font-bold">100% Available</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Plan Box -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-space-lg">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">assignment_turned_in</span>
+<span>AI Prescriptive Action Plan (2 Steps Remaining)</span>
+</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Complete these final items to boost your Readiness Gauge to 100%:</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant flex items-start justify-between">
+<div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">1. Obtain Tahsildar Income Certificate</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Apply via e-Seva center or digital district portal (typically issued in 48 hours).</p>
+</div>
+<button class="text-label-sm font-label-sm bg-primary text-on-primary px-2.5 py-1 rounded ml-2 flex-shrink-0" onclick="goToStep(9)">Upload</button>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant flex items-start justify-between">
+<div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">2. Prepare Simple Machine Invoice</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Get a pro-forma invoice for your tailoring machines from any registered vendor.</p>
+</div>
+<button class="text-label-sm font-label-sm bg-primary text-on-primary px-2.5 py-1 rounded ml-2 flex-shrink-0" onclick="goToStep(9)">Upload</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 9: DOCUMENT CHECKLIST ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-9">
+<div class="flex justify-between items-center">
+<div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded text-label-sm font-label-sm font-bold">Document Readiness Vault</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Application Checklist (Term Loan Scheme)</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Audit and verify your mandatory compliance proofs before visiting the partner bank.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm flex items-center gap-1" onclick="goToStep(10)">
+<span>Find Authorized Partner</span> →
+        </button>
+</div>
+<!-- Checklist Progress Summary -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-md font-label-md text-on-surface">Document Completion Progress</span>
+<span class="text-label-md font-label-md font-bold text-primary" id="docProgressText">4 of 5 Completed (80%)</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[80%] transition-all duration-300" id="docProgressBar"></div>
+</div>
+</div>
+<!-- Document Items List -->
+<div class="space-y-3">
+<!-- Doc 1: Aadhaar -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Aadhaar Card (Identity &amp; Residential Proof)</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">UIDAI linked • Verified via demographic API</p>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check</span> Available
+          </span>
+</div>
+<!-- Doc 2: Caste / Community Certificate -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">description</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Community Certificate (OBC Affirmative Classification)</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Issued by Revenue Divisional Officer (RDO)</p>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check</span> Available
+          </span>
+</div>
+<!-- Doc 3: Income Certificate (Simulated Action) -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-tertiary/40 flex items-center justify-between" id="incomeDocCard">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-2xl">pending</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Income Certificate from Tahsildar / Revenue Department</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Required to substantiate the &lt; ₹5.0 Lakh annual family ceiling</p>
+</div>
+</div>
+<button class="bg-tertiary text-on-tertiary hover:bg-tertiary-container px-3 py-1.5 rounded-lg text-label-sm font-label-sm flex items-center gap-1 shadow-sm transition-all" id="simulateUploadBtn" onclick="simulateUploadIncomeDoc()">
+<span class="material-symbols-outlined text-xs">upload_file</span>
+<span>Simulate Upload</span>
+</button>
+</div>
+<!-- Doc 4: Business Quotation -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">receipt_long</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Project Cost Estimate &amp; Machine Vendor Quotation</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">₹5,00,000 apparel machinery invoice draft attached</p>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check</span> Available
+          </span>
+</div>
+<!-- Doc 5: Bank Passbook -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">account_balance_wallet</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Bank Account Details (6 Months Passbook Statement)</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Indian Overseas Bank Savings Account active</p>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check</span> Available
+          </span>
+</div>
+</div>
+</section>
+<!-- ==================== FLOW STEP 10: GEO-SPATIAL PARTNER LOCATOR ==================== -->
+<section class="flow-step hidden space-y-space-xl" id="step-10">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded text-label-sm font-label-sm font-bold">Authorized Civic Nodal Network</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Geo-Spatial Partner Locator</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Authorized channelizing banks &amp; district welfare centers in your vicinity.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="border border-outline px-3 py-2 rounded-lg text-label-md font-label-md hover:bg-surface-container-low" onclick="goToStep(1)">
+            Start New Discovery
+          </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-primary-container shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">print</span> Download Application Packet
+          </button>
+</div>
+</div>
+<!-- Main Locator Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Side Filter & Recommended List (4 cols) -->
+<div class="lg:col-span-4 space-y-space-md">
+<!-- Filters Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant space-y-3">
+<div class="text-label-md font-label-md text-on-surface font-bold flex items-center justify-between">
+<span>Filter Nearby Centers</span>
+<span class="text-primary text-xs font-semibold cursor-pointer">Reset</span>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface-variant mb-1">Current Center</label>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low border border-outline-variant text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-primary text-sm">my_location</span>
+<span>Chennai Central (13.0827° N, 80.2707° E)</span>
+</div>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface-variant mb-1">Target Subvention Scheme</label>
+<select class="w-full px-3 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-body-sm">
+<option selected="">Term Loan Scheme (NBCFDC)</option>
+<option>Micro Finance Scheme</option>
+<option>Mudra Tarun Plus</option>
+</select>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm mb-1">
+<span>Search Radius</span>
+<span class="font-bold text-primary">Within 10 km</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container rounded-lg" max="25" min="2" type="range" value="10"/>
+</div>
+</div>
+<!-- Partner Ranking Cards -->
+<div class="space-y-2.5">
+<!-- Partner B: Recommended -->
+<div class="p-3.5 rounded-xl border-2 border-primary bg-primary-fixed/10 space-y-2 relative">
+<div class="flex justify-between items-start">
+<div>
+<span class="bg-primary text-on-primary text-label-sm font-label-sm font-bold px-2 py-0.5 rounded">RECOMMENDED • 3.2 km</span>
+<h4 class="text-headline-sm font-headline-sm text-on-surface mt-1">Tamil Nadu Backward Classes Economic Dev. Corp (TABCEDCO)</h4>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Dedicated state channelizing desk for NBCFDC Term Loan scheme processing.</p>
+<div class="flex items-center justify-between pt-1 border-t border-primary/20 text-xs">
+<span class="text-primary font-bold">100% Scheme Compatible</span>
+<button class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Directions</button>
+</div>
+</div>
+<!-- Partner A: Closer but Not direct NBCFDC -->
+<div class="p-3 rounded-xl border border-outline-variant bg-surface-container-lowest space-y-1.5 opacity-80">
+<div class="flex justify-between items-start">
+<h4 class="text-label-lg font-label-lg text-on-surface">Indian Overseas Bank (George Town Branch)</h4>
+<span class="text-label-sm font-label-sm text-on-surface-variant">2.1 km</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Commercial Public Sector Bank. Mudra processing only (Term loan requires SCA endorsement first).</p>
+<span class="text-label-sm font-label-sm text-outline font-semibold block">Secondary Routing Required</span>
+</div>
+<!-- Partner C: Authorized Lead District Bank -->
+<div class="p-3 rounded-xl border border-outline-variant bg-surface-container-lowest space-y-1.5">
+<div class="flex justify-between items-start">
+<h4 class="text-label-lg font-label-lg text-on-surface">Canara Bank Lead District Office</h4>
+<span class="text-label-sm font-label-sm text-on-surface-variant">5.4 km</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Official nodal co-sponsor for small enterprise project loans.</p>
+<span class="text-label-sm font-label-sm text-primary font-semibold block">Authorized Partner</span>
+</div>
+</div>
+</div>
+<!-- Interactive Vector GIS Map Representation (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">map</span>
+<span class="text-headline-sm font-headline-sm text-on-surface">Chennai Metro Civic Grid Routing</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span> Partner Pin</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-tertiary inline-block"></span> Your Workshop</span>
+</div>
+</div>
+<!-- SVG Visual Map Area -->
+<div class="relative w-full h-[460px] bg-slate-100 rounded-xl overflow-hidden border border-outline-variant flex items-center justify-center">
+<svg class="w-full h-full" viewbox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<!-- Water Body (Bay of Bengal Coastline) -->
+<path d="M 620 0 Q 640 250 680 500 L 800 500 L 800 0 Z" fill="#dae2fd" opacity="0.6"></path>
+<!-- City Roads & Grid -->
+<line stroke="#e2e8f0" stroke-width="8" x1="100" x2="600" y1="50" y2="70"></line>
+<line stroke="#cbd5e1" stroke-width="12" x1="80" x2="620" y1="180" y2="200"></line>
+<line stroke="#e2e8f0" stroke-width="8" x1="60" x2="650" y1="320" y2="340"></line>
+<line stroke="#e2e8f0" stroke-width="8" x1="200" x2="220" y1="0" y2="500"></line>
+<line stroke="#cbd5e1" stroke-width="14" x1="420" x2="450" y1="0" y2="500"></line>
+<!-- Connecting Route Dash Line (User to Recommended Partner B) -->
+<path d="M 320 280 Q 380 260 450 160" fill="none" stroke="#00685f" stroke-dasharray="8 6" stroke-width="4"></path>
+<!-- User Pin Location -->
+<g transform="translate(320, 280)">
+<circle fill="#ffdad6" opacity="0.6" r="20"></circle>
+<circle fill="#b15f00" r="10"></circle>
+<circle fill="#ffffff" r="4"></circle>
+<text fill="#191c1e" font-size="12" font-weight="600" x="-35" y="32">Your Tailoring Unit</text>
+</g>
+<!-- Partner Pin B (TABCEDCO - Recommended) -->
+<g transform="translate(450, 160)">
+<circle fill="#89f5e7" opacity="0.7" r="26"></circle>
+<circle fill="#00685f" r="13"></circle>
+<circle fill="#ffffff" r="5"></circle>
+<rect fill="#00685f" height="24" rx="12" width="130" x="-65" y="-45"></rect>
+<text fill="#ffffff" font-size="11" font-weight="bold" x="-55" y="-29">★ TABCEDCO (3.2km)</text>
+</g>
+<!-- Partner Pin A -->
+<g transform="translate(390, 310)">
+<circle fill="#565e74" r="9"></circle>
+<text fill="#565e74" font-size="11" x="14" y="4">IOB Branch (2.1km)</text>
+</g>
+<!-- Partner Pin C -->
+<g transform="translate(240, 110)">
+<circle fill="#00685f" r="9"></circle>
+<text fill="#191c1e" font-size="11" x="14" y="4">Canara Lead (5.4km)</text>
+</g>
+</svg>
+<!-- Map Floating Card Badge -->
+<div class="absolute bottom-4 left-4 bg-surface-container-lowest p-3 rounded-lg border border-outline-variant shadow-md max-w-sm">
+<div class="text-label-sm font-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">directions_car</span> Recommended Route
+              </div>
+<p class="text-body-sm font-body-sm text-on-surface">12 mins via EVR Periyar Salai to TABCEDCO Nodal Head Office.</p>
+</div>
+</div>
+<!-- Bottom Footer Information -->
+<div class="flex flex-wrap items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-3 border-t border-outline-variant">
+<span>Operating Hours: Mon - Fri (10:00 AM - 5:00 PM)</span>
+<span class="text-primary font-semibold">Toll-free Nodal Grievance Redressal: 1800-425-9988</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container border-t border-outline-variant mt-space-2xl">
+<div class="max-w-max-content-width mx-auto px-gutter-desktop py-space-xl flex flex-col md:flex-row justify-between items-center gap-space-md text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm text-primary font-bold">LoanLink</span>
+<span>•</span>
+<span>© 2025 LoanLink SIH26092. Empowering marginalized entrepreneurs under civic fintech framework.</span>
+</div>
+<div class="flex flex-wrap gap-4 text-label-md font-label-md">
+<a class="hover:text-primary transition-colors" href="#">National Portal Guidelines</a>
+<a class="hover:text-primary transition-colors" href="#">Scheme Eligibility FAQs</a>
+<a class="hover:text-primary transition-colors" href="#">Grievance Redressal</a>
+<a class="hover:text-primary transition-colors" href="#">Security &amp; Privacy Notice</a>
+</div>
+</div>
+</footer>
+<!-- SCRIPT ENGINE: INTERACTIVE 10-STEP ROUTER & LOGIC -->
+<script>
+    const stepNames = [
+      "1. Landing & Discovery",
+      "2. Profile Diagnostic",
+      "3. AI Scheme Matching",
+      "4. Scheme Details",
+      "5. Scheme Comparison",
+      "6. Interactive EMI Calculator",
+      "7. Financial Health Simulator",
+      "8. Application Readiness",
+      "9. Document Checklist",
+      "10. Partner Geo-Locator"
+    ];
+
+    let currentStep = 1;
+
+    // Step Transition Function
+    function goToStep(step) {
+      if (step < 1 || step > 10) return;
+      currentStep = step;
+
+      // Hide all step containers
+      for (let i = 1; i <= 10; i++) {
+        const el = document.getElementById(`step-${i}`);
+        const pill = document.getElementById(`pill-${i}`);
+        if (el) el.classList.add('hidden');
+        if (pill) {
+          pill.classList.remove('step-badge-active');
+          pill.classList.add('text-on-surface-variant');
+        }
+      }
+
+      // Show current step container
+      const activeEl = document.getElementById(`step-${step}`);
+      const activePill = document.getElementById(`pill-${step}`);
+      if (activeEl) activeEl.classList.remove('hidden');
+      if (activePill) {
+        activePill.classList.add('step-badge-active');
+        activePill.classList.remove('text-on-surface-variant');
+      }
+
+      // Update header indicators
+      const textDisplay = document.getElementById('currentStepIndicator');
+      const numDisplay = document.getElementById('stepNumberDisplay');
+      if (textDisplay) textDisplay.innerText = stepNames[step - 1];
+      if (numDisplay) numDisplay.innerText = step;
+
+      // Scroll smoothly to top of main
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // EMI Calculator Logic
+    const loanSlider = document.getElementById('loanAmountSlider');
+    const interestSlider = document.getElementById('interestRateSlider');
+    const tenureSlider = document.getElementById('tenureSlider');
+
+    function calculateEMI() {
+      if (!loanSlider || !interestSlider || !tenureSlider) return;
+
+      const P = parseFloat(loanSlider.value);
+      const annualRate = parseFloat(interestSlider.value);
+      const years = parseInt(tenureSlider.value);
+      const N = years * 12;
+      const r = (annualRate / 12) / 100;
+
+      // Monthly EMI Formula
+      const emi = (P * r * Math.pow(1 + r, N)) / (Math.pow(1 + r, N) - 1);
+      const totalPayment = emi * N;
+      const totalInterest = totalPayment - P;
+      const interestPct = Math.round((totalInterest / totalPayment) * 100);
+
+      // DOM Updates
+      document.getElementById('loanAmountText').innerText = '₹' + P.toLocaleString('en-IN');
+      document.getElementById('interestRateText').innerText = annualRate.toFixed(1) + '%';
+      document.getElementById('tenureYearsText').innerText = `${years} Years (${N} mos)`;
+      document.getElementById('calculatedEmiDisplay').innerText = '₹' + Math.round(emi).toLocaleString('en-IN');
+      document.getElementById('tenureMonthsDisplay').innerText = N;
+
+      document.getElementById('breakdownPrincipal').innerText = '₹' + P.toLocaleString('en-IN');
+      document.getElementById('breakdownInterest').innerText = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+      document.getElementById('breakdownTotalPayable').innerText = '₹' + Math.round(totalPayment).toLocaleString('en-IN');
+
+      // Update SVG Donut (stroke-dasharray)
+      const interestSegment = document.getElementById('donutInterestSegment');
+      const interestPctLabel = document.getElementById('interestPctLabel');
+      if (interestSegment) {
+        interestSegment.setAttribute('stroke-dasharray', `${interestPct}, ${100 - interestPct}`);
+      }
+      if (interestPctLabel) {
+        interestPctLabel.innerText = interestPct + '%';
+      }
+    }
+
+    if (loanSlider) loanSlider.addEventListener('input', calculateEMI);
+    if (interestSlider) interestSlider.addEventListener('input', calculateEMI);
+    if (tenureSlider) tenureSlider.addEventListener('input', calculateEMI);
+
+    // What-If Simulation Logic
+    const whatIfSlider = document.getElementById('whatIfSlider');
+    if (whatIfSlider) {
+      whatIfSlider.addEventListener('input', function() {
+        const val = parseFloat(this.value);
+        document.getElementById('whatIfAmountDisplay').innerText = '₹' + val.toLocaleString('en-IN');
+        
+        // Approx 8% interest over 5 years
+        const r = (8.0 / 12) / 100;
+        const n = 60;
+        const emi = (val * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        const income = 35000;
+        const dti = (emi / income) * 100;
+
+        document.getElementById('whatIfEmi').innerText = '₹' + Math.round(emi).toLocaleString('en-IN') + ' / mo';
+        document.getElementById('whatIfDti').innerText = dti.toFixed(1) + '%';
+
+        const appLabel = document.getElementById('whatIfApproval');
+        if (dti < 30) {
+          appLabel.innerText = 'Very High (95%)';
+          appLabel.className = 'text-headline-sm font-headline-sm font-bold text-primary';
+        } else if (dti < 45) {
+          appLabel.innerText = 'Moderate (70%)';
+          appLabel.className = 'text-headline-sm font-headline-sm font-bold text-tertiary';
+        } else {
+          appLabel.innerText = 'Caution (>50% DTI)';
+          appLabel.className = 'text-headline-sm font-headline-sm font-bold text-error';
+        }
+      });
+    }
+
+    // Document Checklist Simulation
+    function simulateUploadIncomeDoc() {
+      const card = document.getElementById('incomeDocCard');
+      const btn = document.getElementById('simulateUploadBtn');
+      const bar = document.getElementById('docProgressBar');
+      const txt = document.getElementById('docProgressText');
+
+      if (btn) {
+        btn.innerHTML = '<span class="material-symbols-outlined text-xs">check</span> Uploaded';
+        btn.className = 'bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm flex items-center gap-1';
+      }
+      if (card) {
+        card.className = 'bg-surface-container-lowest p-4 rounded-xl border border-primary flex items-center justify-between';
+      }
+      if (bar) bar.style.width = '100%';
+      if (txt) {
+        txt.innerText = '5 of 5 Completed (100% Ready)';
+        txt.classList.add('text-primary');
+      }
+    }
+
+    // Language & Accessibility Toggles
+    function setLanguage(lang) {
+      const enBtn = document.getElementById('langEnBtn');
+      const hiBtn = document.getElementById('langHiBtn');
+      if (lang === 'hi') {
+        hiBtn.className = 'px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all';
+        enBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant hover:text-primary transition-all';
+      } else {
+        enBtn.className = 'px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all';
+        hiBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant hover:text-primary transition-all';
+      }
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle('contrast-125');
+    }
+
+    // Initial calculations on load
+    calculateEMI();
+  </script>
+</body></html>
