@@ -165,9 +165,10 @@
 <span class="material-symbols-outlined">account_balance</span>
 </div>
 <div>
-<div class="flex items-center gap-1">
-<span class="text-headline-md font-headline-md text-primary font-bold tracking-tight">LoanLink</span>
-<span class="text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed px-1.5 py-0.5 rounded font-mono">SIH26092</span>
+<div class="flex items-center">
+    <span class="text-headline-md font-headline-md text-primary font-bold tracking-tight">
+        LoanLink
+    </span>
 </div>
 <p class="text-label-sm font-label-sm text-on-surface-variant hidden sm:block">Civic Public Credit &amp; Welfare Bridge</p>
 </div>
@@ -264,10 +265,6 @@
 <button class="bg-primary text-on-primary text-label-lg font-label-lg px-space-xl py-3 rounded-lg hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm active:scale-95" onclick="goToStep(2)">
 <span>Find My Scheme</span>
 <span class="material-symbols-outlined text-base">arrow_forward</span>
-</button>
-<button class="border border-outline text-on-surface text-label-lg font-label-lg px-space-lg py-3 rounded-lg hover:bg-surface-container-low transition-all flex items-center gap-2" onclick="goToStep(6)">
-<span class="material-symbols-outlined text-base">calculate</span>
-<span>Explore How It Works</span>
 </button>
 </div>
 <!-- Official Civic Disclaimer Badge -->
@@ -369,9 +366,6 @@
 <h2 class="text-headline-xl font-headline-xl text-on-surface">Tell us about yourself</h2>
 <p class="text-body-sm font-body-sm text-on-surface-variant">Provide high-level details to compute your legal eligibility across subsidized public funds.</p>
 </div>
-<div class="bg-surface-container-low px-3 py-1 rounded text-label-sm font-label-sm font-medium text-on-surface-variant">
-            Privacy Protected • SIH26092
-          </div>
 </div>
 <form class="space-y-space-lg" id="profileForm" onsubmit="event.preventDefault(); goToStep(3);">
 <!-- Personal Info -->
@@ -423,24 +417,49 @@
 </h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
 <div>
-<label class="block text-label-md font-label-md text-on-surface mb-1">Affirmative Category</label>
-<div class="grid grid-cols-4 gap-2">
-<label class="border border-primary bg-primary-fixed text-on-primary-fixed rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm">
-<input checked="" class="hidden" name="socCategory" type="radio"/>
-<span>OBC</span>
-</label>
-<label class="border border-outline-variant rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm hover:bg-surface-container-low">
-<input class="hidden" name="socCategory" type="radio"/>
-<span>SC</span>
-</label>
-<label class="border border-outline-variant rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm hover:bg-surface-container-low">
-<input class="hidden" name="socCategory" type="radio"/>
-<span>ST</span>
-</label>
-<label class="border border-outline-variant rounded-lg p-2 text-center cursor-pointer text-label-sm font-label-sm hover:bg-surface-container-low">
-<input class="hidden" name="socCategory" type="radio"/>
-<span>General</span>
-</label>
+    <label class="block text-label-md font-label-md text-on-surface mb-1">
+        Affirmative Category
+    </label>
+
+    <div class="grid grid-cols-4 gap-2">
+
+        <label class="category-option border border-outline-variant rounded-lg p-2 text-center cursor-pointer hover:bg-surface-container-low transition-all">
+            <input
+                class="hidden"
+                name="socCategory"
+                type="radio"
+                value="OBC">
+            <span>OBC</span>
+        </label>
+
+        <label class="category-option border border-outline-variant rounded-lg p-2 text-center cursor-pointer hover:bg-surface-container-low transition-all">
+            <input
+                class="hidden"
+                name="socCategory"
+                type="radio"
+                value="SC">
+            <span>SC</span>
+        </label>
+
+        <label class="category-option border border-outline-variant rounded-lg p-2 text-center cursor-pointer hover:bg-surface-container-low transition-all">
+            <input
+                class="hidden"
+                name="socCategory"
+                type="radio"
+                value="ST">
+            <span>ST</span>
+        </label>
+
+        <label class="category-option border border-outline-variant rounded-lg p-2 text-center cursor-pointer hover:bg-surface-container-low transition-all">
+            <input
+                class="hidden"
+                name="socCategory"
+                type="radio"
+                value="General">
+            <span>General</span>
+        </label>
+
+    </div>
 </div>
 </div>
 <div>
@@ -473,9 +492,6 @@
 </div>
 <!-- Form CTAs -->
 <div class="border-t border-outline-variant pt-space-md flex items-center justify-between">
-<button class="text-on-surface-variant hover:text-on-surface text-label-md font-label-md flex items-center gap-1" onclick="goToStep(1)" type="button">
-              ← Back to Landing
-            </button>
 <button class="bg-primary text-on-primary text-label-lg font-label-lg px-space-xl py-3 rounded-lg hover:bg-primary-container transition-all flex items-center gap-2 shadow-sm" type="submit">
 <span>✨ Find My Schemes</span>
 <span class="material-symbols-outlined text-base">arrow_forward</span>
@@ -606,7 +622,7 @@
 <div class="bg-surface-container-low rounded-xl border border-outline-variant p-space-lg">
 <div class="flex items-center gap-2 mb-3">
 <span class="material-symbols-outlined text-primary text-xl">psychology</span>
-<h3 class="text-headline-sm font-headline-sm text-on-surface">Explainable AI (XAI): Why did we recommend these schemes?</h3>
+<h3 class="text-headline-sm font-headline-sm text-on-surface"> Why did we recommend these schemes?</h3>
 </div>
 <p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
           Our rule-based civic decision engine matched your inputs with statutory gazetted program guidelines with 0% black-box opacity:
@@ -1061,7 +1077,7 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-outline-variant pb-3">
 <h3 class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">tune</span>
-<span>Interactive "What-If" Stress Simulation</span>
+<span>What If? Try & See</span>
 </h3>
 <span class="text-label-sm font-label-sm text-on-surface-variant">Live re-evaluation of DTI based on borrow size</span>
 </div>
@@ -1176,7 +1192,7 @@
 <div class="bg-surface-container-low rounded-xl border border-outline-variant p-space-lg">
 <h3 class="text-headline-sm font-headline-sm text-on-surface mb-2 flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">assignment_turned_in</span>
-<span>AI Prescriptive Action Plan (2 Steps Remaining)</span>
+<span>Ready to Grow? 2 Steps Left</span>
 </h3>
 <p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Complete these final items to boost your Readiness Gauge to 100%:</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
@@ -1353,7 +1369,6 @@
 <p class="text-body-sm font-body-sm text-on-surface-variant">Dedicated state channelizing desk for NBCFDC Term Loan scheme processing.</p>
 <div class="flex items-center justify-between pt-1 border-t border-primary/20 text-xs">
 <span class="text-primary font-bold">100% Scheme Compatible</span>
-<button class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Directions</button>
 </div>
 </div>
 <!-- Partner A: Closer but Not direct NBCFDC -->
@@ -1511,6 +1526,162 @@
       // Scroll smoothly to top of main
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    //Navigation Buttons
+    // ============================================
+// PREVIOUS / NEXT NAVIGATION
+// ============================================
+
+function addStepNavigation() {
+
+    for (let step = 1; step <= 10; step++) {
+
+        const section = document.getElementById(`step-${step}`);
+
+        if (!section) {
+            continue;
+        }
+
+        // Prevent duplicate buttons
+        if (section.querySelector(".step-navigation")) {
+            continue;
+        }
+
+        const navigation = document.createElement("div");
+
+        navigation.className =
+            "step-navigation flex justify-between items-center mt-8 pt-6 border-t border-outline-variant";
+
+
+        // ============================
+        // PREVIOUS BUTTON
+        // ============================
+
+        const previousButton = document.createElement("button");
+
+        previousButton.type = "button";
+
+        previousButton.className =
+            "border border-outline px-4 py-2.5 rounded-lg " +
+            "text-label-md font-label-md " +
+            "text-on-surface " +
+            "hover:bg-surface-container-low " +
+            "transition-all flex items-center gap-2";
+
+        if (step === 1) {
+
+            previousButton.style.visibility = "hidden";
+
+        } else {
+
+            previousButton.innerHTML =
+                '<span class="material-symbols-outlined text-sm">arrow_back</span>' +
+                '<span>Previous</span>';
+
+            previousButton.onclick = function () {
+                goToStep(step - 1);
+            };
+        }
+
+
+        // ============================
+        // NEXT BUTTON
+        // ============================
+
+        const nextButton = document.createElement("button");
+
+        nextButton.type = "button";
+
+        nextButton.className =
+            "bg-primary text-on-primary px-5 py-2.5 rounded-lg " +
+            "text-label-md font-label-md " +
+            "hover:bg-primary-container " +
+            "transition-all flex items-center gap-2 shadow-sm";
+
+        if (step === 10) {
+
+            nextButton.innerHTML =
+                '<span class="material-symbols-outlined text-sm">home</span>' +
+                '<span>Back to Home</span>';
+
+            nextButton.onclick = function () {
+                goToStep(1);
+            };
+
+        } else {
+
+            nextButton.innerHTML =
+                '<span>Next</span>' +
+                '<span class="material-symbols-outlined text-sm">arrow_forward</span>';
+
+            nextButton.onclick = function () {
+                goToStep(step + 1);
+            };
+        }
+
+
+        // Add buttons
+        navigation.appendChild(previousButton);
+        navigation.appendChild(nextButton);
+
+        // Add navigation to current step
+        section.appendChild(navigation);
+    }
+}
+
+
+    // Start navigation
+    addStepNavigation();
+
+    // ============================================
+// CATEGORY SELECTION
+// ============================================
+
+const categoryOptions = document.querySelectorAll(
+    'input[name="socCategory"]'
+);
+
+categoryOptions.forEach(function (radio) {
+
+    radio.addEventListener("change", function () {
+
+        // Remove selected style from all categories
+        document
+            .querySelectorAll(".category-option")
+            .forEach(function (option) {
+
+                option.classList.remove(
+                    "border-primary",
+                    "bg-primary-fixed",
+                    "text-on-primary-fixed"
+                );
+
+                option.classList.add(
+                    "border-outline-variant"
+                );
+            });
+
+
+        // Highlight selected category
+        const selectedOption =
+            this.closest(".category-option");
+
+        if (selectedOption) {
+
+            selectedOption.classList.remove(
+                "border-outline-variant"
+            );
+
+            selectedOption.classList.add(
+                "border-primary",
+                "bg-primary-fixed",
+                "text-on-primary-fixed"
+            );
+        }
+
+    });
+
+});
 
     // EMI Calculator Logic
     const loanSlider = document.getElementById('loanAmountSlider');
